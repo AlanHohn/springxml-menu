@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://anvard.org/springxml/menu"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:beans="http://www.springframework.org/schema/beans"
+	targetNamespace="http://anvard.org/springxml/menu" elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+
+	<xsd:import namespace="http://www.springframework.org/schema/beans"
+		schemaLocation="../../../spring-beans.xsd" />
+
+	<xsd:complexType name="menuType">
+		<xsd:complexContent>
+			<xsd:extension base="beans:identifiedType">
+				<xsd:choice minOccurs="0" maxOccurs="unbounded">
+					<xsd:element name="menu" type="menuType" />
+				</xsd:choice>
+				<xsd:attribute name="title" type="xsd:string" use="required" />
+				<xsd:attribute name="listener" type="xsd:string" />
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="menu" type="menuType"/>
+
+</xsd:schema>

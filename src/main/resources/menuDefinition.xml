@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bean:beans xmlns="http://anvard.org/springxml/menu"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:bean="http://www.springframework.org/schema/beans"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://anvard.org/springxml/menu 
+						  http://anvard.org/springxml/menu.xsd
+                        http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/util
+                          http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+
+	<bean:bean id="simpleListener" class="org.anvard.springxml.SimpleMenuItemListener" />
+
+	<menu id="menu1" title="Parent 1">
+		<menu id="menu2" title="Child 1" listener="simpleListener" />
+		<menu id="menu3" title="Child 2" listener="simpleListener" />
+		<menu id="menu4" title="Child 3" listener="simpleListener" />
+		<menu id="menu5" title="Child 4" listener="simpleListener" />
+	</menu>
+
+	<menu id="menu6" title="Item 1" listener="simpleListener" />
+
+	<menu id="menu7" title="Grand Parent 1">
+		<menu id="menu8" title="Parent 2">
+			<menu id="menu9" title="Child 5" listener="simpleListener" />
+		</menu>
+	</menu>
+	
+	<util:list id="toplevel">
+		<bean:ref bean="menu1" />
+		<bean:ref bean="menu6" />
+		<bean:ref bean="menu7" />
+	</util:list>
+
+</bean:beans>
