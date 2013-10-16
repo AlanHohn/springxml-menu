@@ -1,4 +1,4 @@
-Spring XML Menus [![Build Status](https://travis-ci.org/AlanHohn/spring-xml-menus.png)](https://travis-ci.org/AlanHohn/spring-xml-menus)
+Spring XML Menus [![Build Status](https://travis-ci.org/AlanHohn/springxml-menu.png)](https://travis-ci.org/AlanHohn/springxml-menu)
 ======
 
 Illustrates using a Spring custom XML namespace to create Swing menus.
